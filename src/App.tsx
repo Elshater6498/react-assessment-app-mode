@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { ThemeProvider } from '@/components/theme-provider';
-import { ModeToggle } from '@/components/mode-toggle';
-import WeatherSection from '@/components/WeatherSection';
-import CryptoSection from '@/components/CryptoSection';
-import CovidSection from '@/components/CovidSection';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle";
+import WeatherSection from "@/components/WeatherSection";
+import CryptoSection from "@/components/CryptoSection";
+import CovidSection from "@/components/CovidSection";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function App() {
-  const [activeTab, setActiveTab] = useState('weather');
+  const [activeTab, setActiveTab] = useState("weather");
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -16,8 +16,12 @@ function App() {
           <h1 className="text-2xl font-bold">React Assessment App</h1>
           <ModeToggle />
         </header>
-        <main className="container mx-auto p-4">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <main className="container max-w-4xl mx-auto p-4">
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="weather">Weather</TabsTrigger>
               <TabsTrigger value="crypto">Crypto</TabsTrigger>
